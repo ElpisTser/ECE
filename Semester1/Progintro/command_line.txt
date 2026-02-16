@@ -1,0 +1,43 @@
+Basic Compilation:
+g++ yourfile.cpp -o programname
+
+Common useful flags:
+# Enable all warnings (helps catch errors)
+g++ -Wall yourfile.cpp -o programname
+
+# Enable debugging information (for use with debuggers)
+g++ -g yourfile.cpp -o programname
+
+# Combine multiple flags
+g++ -Wall -g hello.cpp -o hello
+
+Once compiled, run it like this:
+# In Command Prompt or PowerShell
+.\programname
+
+Using GDB (GNU Debugger)
+First, compile with debug symbols:
+g++ -g program.cpp -o program
+Then start the debugger:
+gdb program
+```
+
+**Basic GDB commands once inside:**
+```
+run              # Start the program
+break main       # Set breakpoint at main function
+break 15         # Set breakpoint at line 15
+next             # Execute next line (step over)
+step             # Execute next line (step into functions)
+continue         # Continue execution until next breakpoint
+print variable   # Print value of a variable
+quit             # Exit GDB
+
+Quick example workflow:
+bashgdb program
+(gdb) break main
+(gdb) run
+(gdb) next
+(gdb) print myVariable
+(gdb) continue
+(gdb) quit
