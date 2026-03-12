@@ -1,0 +1,10 @@
+g++ -c main.cpp -o main.o
+-- produce a main.o object file
+
+g++ main.o side.o -o main.exe
+--link the objcect files and output an executable main.exe
+
+g++ -o main main.cpp side.cpp
+--g++ compiles each .cpp file into an object file automatically (in memory or temporary on disk).
+--Then it links all object files together into the executable main (or main.exe on Windows).
+--You end up with a working program without creating .o files manually.

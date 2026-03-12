@@ -32,6 +32,17 @@ step             # Execute next line (step into functions)
 continue         # Continue execution until next breakpoint
 print variable   # Print value of a variable
 quit             # Exit GDB
+display x        # automatically show variable
+info display     # list displays
+undisplay N      # stop displaying one
+print x          # show variable once
+info locals      # show all local variables
+break function   # Stop whenever that function is called
+step                                        # Execute line and enter function
+set variable x = 10                         # Change variable x to 10 during debugging
+break <line_or_function> if <condition>     # Set a breakpoint that stops only when the condition is true
+finish                                      # Execute the rest of the current function and stop after it returns
+jump <line_number>                          # Move execution to a specific line, can be used to skip loops
 
 Quick example workflow:
 bashgdb program
