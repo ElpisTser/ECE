@@ -4,7 +4,7 @@ class complex {
 public:
     complex(double r=0.0, double im=0.0);
     friend complex operator+(complex c1, complex c2);
-    friend std::ostream& operator<<(std::ostream&, complex c);
+    friend std::ostream& operator<<(std::ostream& out, complex c);
 private:
     double re, im;
 };
