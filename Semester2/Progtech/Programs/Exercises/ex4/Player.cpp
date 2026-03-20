@@ -7,6 +7,6 @@ Player::Player(const string &n): name(n) {};
 Player::~Player() {};
 
 ostream & operator << (ostream & out, const Player &player) {
-    out << player.getType() << " " << player.name;
+    out << player.getType() << " player " << player.name;
     return out;
 }

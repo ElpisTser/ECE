@@ -11,24 +11,15 @@ Greedy::~Greedy() {}
 const string & Greedy::getType() const { return type; }
 
 Move Greedy::play(const State &s) {
-    // To do: better implementation
     int maxHeap = 0;
-    int maxCoins = s.getCoins(0);
-    int heaps = s.getHeaps();
-    for (int i=1; i<heaps; i++) {
-        if (s.getCoins(i) > maxCoins) {
+
+    for (int i=1; i<s.getHeaps(); i++) {
+        if (s.getCoins(i) > s.getCoins(maxHeap))
             maxHeap = i;
-            maxCoins = s.getCoins(i);
-        }
     }
 
-    int targetHeap;
-    if (maxHeap == heaps - 1)
-        targetHeap = maxHeap - 1;
-    else    
-        targetHeap = maxHeap + 1; 
+    int targetHeap = (maxHeap + 1) % s.getHeaps(); // ensures target != source due to State::next() constraint
 
-
-    return Move(maxHeap, maxCoins, targetHeap, 0);
+    return Move(maxHeap, s.getCoins(maxHeap), targetHeap, 0);
 }
 
