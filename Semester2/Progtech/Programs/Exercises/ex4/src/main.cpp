@@ -4,6 +4,7 @@
 #include "Greedy.hpp"
 #include "Spartan.hpp"
 #include "Sneaky.hpp"
+#include "Righteous.hpp"
 
 using namespace std;
 
@@ -27,5 +28,10 @@ int main() {
    Move m3 = sn.play(s);
    s.next(m3);
    cout << sn << " " << m3 << endl << s << endl;
+
+   Righteous ri("Akis");
+   Move m4 = ri.play(s);
+   s.next(m4);
+   cout << ri << " " << m4 << endl << s << endl;
 }
 

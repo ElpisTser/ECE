@@ -18,8 +18,6 @@ Move Greedy::play(const State &s) {
             maxHeap = i;
     }
 
-    int targetHeap = (maxHeap + 1) % s.getHeaps(); // ensures target != source due to State::next() constraint
-
-    return Move(maxHeap, s.getCoins(maxHeap), targetHeap, 0);
+    return Move(maxHeap, s.getCoins(maxHeap), 0, 0);
 }
 

@@ -26,9 +26,6 @@ void State::next(const Move &move) {
     if ((move.getTargetCoins() < 0) || (move.getTargetCoins() > move.getSourceCoins()))
         throw logic_error("Invalid coins for target heap");
 
-    if (move.getSource() == move.getTarget())
-        throw logic_error("Source and target  heap cannot be the same");
-
     coins[move.getSource()] -= move.getSourceCoins();
     coins[move.getTarget()] += move.getTargetCoins();
     

@@ -25,7 +25,5 @@ Move Sneaky::play(const State &s) {
         }
     }
 
-    int targetHeap = (minHeap + 1) % s.getHeaps(); // ensures target != source due to State::next() constraint
-
-    return Move(minHeap, s.getCoins(minHeap), targetHeap, 0);
+    return Move(minHeap, s.getCoins(minHeap), 0, 0);
 }

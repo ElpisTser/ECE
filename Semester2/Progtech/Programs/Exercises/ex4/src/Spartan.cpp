@@ -18,7 +18,5 @@ Move Spartan::play(const State &s) {
             maxHeap = i;
     }
 
-    int targetHeap = (maxHeap + 1) % s.getHeaps(); // ensures target != source due to State::next() constraint
-
-    return Move(maxHeap, 1, targetHeap, 0);
+    return Move(maxHeap, 1, 0, 0);
 }
