@@ -5,6 +5,7 @@
 #include "Spartan.hpp"
 #include "Sneaky.hpp"
 #include "Righteous.hpp"
+#include "Game.hpp"
 
 using namespace std;
 
@@ -33,5 +34,13 @@ int main() {
    Move m4 = ri.play(s);
    s.next(m4);
    cout << ri << " " << m4 << endl << s << endl;
+
+   Game g(3, 4);
+   g.addHeap(3);
+   g.addHeap(4);
+   g.addHeap(5);
+   g.addPlayer(new Sneaky("Baba"));
+   g.addPlayer(new Spartan("Bubu"));
+   cout << *g.getPlayer(1);
 }
 
