@@ -2,7 +2,7 @@
 #define GAME_HPP
 
 #include "Player.hpp"
-#include <vector>
+#include <vector> 
 
 class Game {
 public:
@@ -14,7 +14,7 @@ public:
     void play(std::ostream &out);
 
     int getPlayers() const;
-    const Player *getPlayer(int p) const;
+    const Player * getPlayer(int p) const;
 
 private:
     int heapsNum, playersNum, coinsIndex;

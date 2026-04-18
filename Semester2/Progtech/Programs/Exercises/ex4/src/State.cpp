@@ -1,4 +1,5 @@
 #include "State.hpp"
+#include <stdexcept>
 
 using namespace std;
 
@@ -15,16 +16,16 @@ State::~State() {
 
 void State::next(const Move &move) {
     if ((move.getSource() > heaps - 1) || (move.getSource() < 0))
-        throw logic_error("Invalid source heap");
+        throw logic_error("Tried to get coins from invalid source heap");
 
     if ((move.getTarget() > heaps - 1) || (move.getTarget() < 0))
-        throw logic_error("Invalid target heap");
+        throw logic_error("Tried to put coins to invalid target heap");
 
     if ((move.getSourceCoins() > coins[move.getSource()]) || (move.getSourceCoins() < 0)) 
-        throw logic_error("Invalid coins for source heap");
+        throw logic_error("Tried to get invalid number of coins from source heap");
 
     if ((move.getTargetCoins() < 0) || (move.getTargetCoins() > move.getSourceCoins()))
-        throw logic_error("Invalid coins for target heap");
+        throw logic_error("Tried to put invalid number of coins to target heap");
 
     coins[move.getSource()] -= move.getSourceCoins();
     coins[move.getTarget()] += move.getTargetCoins();
@@ -37,8 +38,8 @@ void State::next(const Move &move) {
 
 bool State::winning() const {
     for (int i=0; i<heaps; i++)
-        if (coins[i] == 0) return true;
-    return false;
+        if (coins[i] != 0) return false;
+    return true;
 }
 
 int State::getHeaps() const { return heaps; }
