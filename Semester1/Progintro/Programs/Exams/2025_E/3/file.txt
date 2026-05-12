@@ -1,0 +1,5 @@
+text files can store large amounts of data as there in no limitation 
+on the size of contents however text editors opening such large files
+need to be smart for loading and dispaying these almost all
+operating systems come with text editors that allow you to create and
+edit text files

@@ -1,0 +1,2 @@
+text files can store
+large amount of data
