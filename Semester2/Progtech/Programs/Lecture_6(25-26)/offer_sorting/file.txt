@@ -1,0 +1,7 @@
+myShop pencil 2.3
+yourShop pencil 2.9
+myShop desk 82
+yourShop desk 80
+myShop table 92
+ourShop pencil 2.1
+ourShop desk 73
