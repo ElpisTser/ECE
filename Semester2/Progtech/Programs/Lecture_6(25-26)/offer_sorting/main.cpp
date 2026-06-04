@@ -51,16 +51,16 @@ int main() {
     ifstream input("file.txt");
 
     if (!input) {
-    cout << "Could not open file!" << endl;
-    return 1;
-}
+        cout << "Could not open file!" << endl;
+        return 1;
+    }
 
     string sup, item;
     double prc;
 
     bids receivedOffers;
 
-    while (input >> sup >> item >> prc) {
+    while (input >> sup >> item >> prc) {       
         receivedOffers[item].insert(Offer(sup, prc));
     }
 
